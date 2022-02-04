@@ -1,0 +1,27 @@
+.sidebar-menu {
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    background-color: rgb(157, 73, 236);
+    color: white;
+    height: 100vh;
+    visibility: hidden;
+}
+
+.sidebar-menu.show {
+    visibility: visible;
+}
+
+.sidebar-title {
+    margin: 1em 0;
+}
+
+.sidebar-list li {
+    list-style-type: none;
+}
+
+.close-menu {
+    float: right;
+}
