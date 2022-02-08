@@ -1,32 +1,28 @@
 import React from "react";
+import "./modalStyles.css";
 import { useModalContext } from "../../contexts/modalContext";
+import { FaTimes } from "react-icons/fa";
 
 const ModalComponent = ({ title }) => {
   const { isModalOpen, closeModal } = useModalContext();
 
   return (
     <div
-      className={`${isModalOpen ? "modal-overlay show" : "modal-overlay hide"}`}
+      className={`${
+        isModalOpen ? "modal-container show-modal" : "modal-container"
+      }`}
     >
-      <div className="modal-content">
-        <div className="modal-title">
+      <div className="modal">
+        <button className="modal-btn" onClick={closeModal}>
+          <FaTimes />
+        </button>
+        <div className="modal-header">
           <h3>{title}</h3>
-          <span className="close">
-            <button onClick={closeModal}>X</button>
-          </span>
         </div>
-        <div className="modal-body">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet odit
-            obcaecati necessitatibus. Sequi impedit iste sunt rem voluptates quo
-            sed pariatur rerum! Aperiam, voluptates quia?
-          </p>
+        <div className="modal-content">
+          <p>Modal content text</p>
         </div>
-        <div className="modal-footer">
-          <button className="btn btn-small" onClick={closeModal}>
-            Close
-          </button>
-        </div>
+        <div className="modal-footer">Modal Footer</div>
       </div>
     </div>
   );

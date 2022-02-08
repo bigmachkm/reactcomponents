@@ -1,0 +1,79 @@
+.modal-container {
+    background-color: rgba(0,0,0,0.6);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    height: 100vh;
+    z-index: 1;
+}
+
+.modal-container.show-modal {
+    display: block;
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-lg);
+    position: absolute;
+    overflow: hidden;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    width: 400px;
+    animation: modalOpen var(--modalDuration) ease-in-out;
+}
+
+.modal-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.7em;
+}
+
+.modal-header h3 {
+    margin: 0;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 2px;
+}
+
+.modal-content {
+    padding: 0.7em;
+}
+
+.modal-footer {
+    padding: 0.7em;
+    background-color: var(--secondary);
+    color: #fff;
+    font-size: small;
+    text-align: center;
+}
+
+.modal-btn {
+    font-size: 1.5em;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    color: #fff;
+    padding: 0.2em;
+}
+
+.modal-btn:hover {
+    color: rgb(212, 12, 12);
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;    
+}
+
+@keyframes modalOpen {
+    from { 
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
