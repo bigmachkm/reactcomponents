@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --body-background: radial-gradient(rgb(51, 51, 209), rgb(46, 65, 245));
+  --box-shadow: 0 0.5rem 1rem rgba(1, 1, 1, 0.15);
+  --box-shadow-sm: 0 0.125rem 0.25rem rgba(1, 1, 1, 0.75);
+  --box-shadow-lg: 0 1rem 3rem rgba(1, 1, 1 0.175);
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;  
+}
+
+body {
+ background-image: var(--body-background);
+ font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.container h1 {
+  text-align: center;
+  margin-top: 2rem;
+  color: white;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+.hide {
+  z-index: -1;
+  opacity: 0;
+  animation: hide 0.7s;
+}
+
+.show {
+  z-index: 2;
+  animation: show 1.2s;
+}
+
+.modal-content {
+  width: 600px;
+  margin: 0 auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 20%;
+  background-color: rgb(255,255,255);
+  border-radius: 0.5em;
+  color: rgb(0,0,0);
+  box-shadow: var(--box-shadow-lg);
+  transition: all 1.5s ease-in-out;
+}
+
+.modal-title {
+  position: relative;
+  margin: 10px 0;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.close button {
+  font-size: 1.2em;
+}
+
+.close button:hover {
+  transform: scale(1.2);
+  font-weight: bold;
+  color: rgb(199, 14, 14);
+  transition: all 0.25s ease-in-out;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+}
+
+button {
+  background-color: none;
+  border: none;  
+}
+
+.btn {
+  padding: 1em 1.5em;
+  background-color: rgb(201, 28, 28);
+  border-radius: 0.75em;
+  color: white;
+  border: 3px solid rgb(148, 6, 6);
+  font-size: 1.25em;
+}
+
+.btn-small {
+  padding: 0.4em 1.25em;
+  float: right;
+  margin-top: 1em;
+  font-size: 1em;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.75;
+  transition: all 0.25s ease-in-out;
+}
+
+@keyframes hide {
+  from {
+    z-index: 2;
+    opacity: 1;
+  }
+
+  to {
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    z-index: -1;
+  }
+
+  to {
+    opacity: 1;
+    z-index: 2;
+  }
+}
+
+
+
