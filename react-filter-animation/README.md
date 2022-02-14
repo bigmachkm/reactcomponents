@@ -73,3 +73,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 To work, an API key is required from Ithemoviedb.org
 https://www.themoviedb.org/settings/api?language=en-GB
+
+Add a new config file in components to test or you should really add the key to an environment variable
