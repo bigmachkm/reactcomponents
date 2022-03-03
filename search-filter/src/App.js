@@ -7,6 +7,8 @@ function App() {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
 
+  const keys = ["firstname", "lastname", "email"];
+
   const getUsers = async () => {
     try {
       const res = await axios.get("https://api.srecms.co.uk/api/v1/users");
@@ -27,15 +29,9 @@ function App() {
     return <h3>Loading....</h3>;
   }
 
-  // Fine, if this is a basic component, filtering using the method below is fine but its not opitimal
-  // Need a third, more efficient and less resource hungry method
-
   const search = () => {
-    return users.filter(
-      (item) =>
-        item.firstname.toLowerCase().includes(query) ||
-        item.lastname.toLowerCase().includes(query) ||
-        item.email.toLowerCase().includes(query)
+    return users.filter((item) =>
+      keys.some((key) => item[key].toLowerCase().includes(query))
     );
   };
 
