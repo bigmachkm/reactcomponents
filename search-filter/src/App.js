@@ -27,6 +27,18 @@ function App() {
     return <h3>Loading....</h3>;
   }
 
+  // Fine, if this is a basic component, filtering using the method below is fine but its not opitimal
+  // Need a third, more efficient and less resource hungry method
+
+  const search = () => {
+    return users.filter(
+      (item) =>
+        item.firstname.toLowerCase().includes(query) ||
+        item.lastname.toLowerCase().includes(query) ||
+        item.email.toLowerCase().includes(query)
+    );
+  };
+
   return (
     <div className="container mx-auto w-full max-w-4xl fade-in">
       <div className="flex flex-col py-10 px-5 border border-gray-100 my-3 rounded shadow-xl">
@@ -40,7 +52,7 @@ function App() {
           />
         </div>
         <div className="w-full fade-in-bottom">
-          <UsersTable users={users} />
+          <UsersTable data={search(users)} />
         </div>
       </div>
     </div>

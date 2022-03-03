@@ -1,7 +1,6 @@
 import React from "react";
 
-function User({ users }) {
-  console.log(users);
+function User({ data }) {
   return (
     <table className="table-auto shadow-lg my-2 w-full">
       <thead>
@@ -18,8 +17,8 @@ function User({ users }) {
         </tr>
       </thead>
       <tbody>
-        {users?.map((i) => (
-          <tr key={i.id}>
+        {data?.map((i) => (
+          <tr key={i.id} className="fade-in">
             <td className="border px-8 py-2">{i.firstname}</td>
             <td className="border px-8 py-2">{i.lastname}</td>
             <td className="border px-8 py-2">{i.email}</td>
